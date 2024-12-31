@@ -1,0 +1,40 @@
+<?php
+
+    class Database {
+        
+        private $host;
+        private $db_name;
+        private $username;
+        private $password;
+        public $conn;
+
+        public function __construct()
+        {
+            if ($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72'){
+                $this->host = "localhost";
+                $this->db_name = "ims";
+                $this->username = "root";
+                $this->password = "";
+            } else {
+                $this->host = "localhost";
+                $this->db_name = "u772084991_ims";
+                $this->username = "u772084991_ims";
+                $this->password = "Inventory2024@";
+            }
+        }
+
+        public function dbConnection() 
+        {
+            $this->conn = null;
+
+            try {
+                $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $exception) {
+                echo "connection error:" . $exception->getMessage();
+            }
+
+            return $this->conn;
+        }
+    }
+?>
