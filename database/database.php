@@ -12,14 +12,14 @@
         {
             if ($_SERVER['SERVER_NAME'] === 'localhost' || $_SERVER['SERVER_ADDR'] === '127.0.0.1' || $_SERVER['SERVER_ADDR'] === '192.168.1.72'){
                 $this->host = "localhost";
-                $this->db_name = "ims";
+                $this->db_name = "ums";
                 $this->username = "root";
                 $this->password = "";
             } else {
                 $this->host = "localhost";
-                $this->db_name = "u772084991_ims";
-                $this->username = "u772084991_ims";
-                $this->password = "Inventory2024@";
+                $this->db_name = "";
+                $this->username = "";
+                $this->password = "";
             }
         }
 
