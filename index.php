@@ -1,7 +1,7 @@
 <?php 
 require_once('config/settings-config.php');
 require_once ('dashboard/controller/authentication.php');
-include('src/alert.php');
+include('src/partials/alert.php');
 
 
 if (isset($_POST['btn-login'])) {

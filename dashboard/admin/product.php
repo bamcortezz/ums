@@ -21,20 +21,20 @@ require_once('../controller/authentication.php');
     
    <div class="p-4 sm:ml-64">
       <div class="p-4">
-         <h1 class="text-3xl font-bold mb-4">Admin Dashboard</h1>
+         <h1 class="text-3xl font-bold mb-4">Product Dashboard</h1>
          <div class="grid grid-cols-3 gap-4 mb-4">
             <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">Overview 1</p>
+               <p class="text-2xl text-gray-400 dark:text-gray-500">Product 1</p>
             </div>
             <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">Overview 2</p>
+               <p class="text-2xl text-gray-400 dark:text-gray-500">Product 2</p>
             </div>
             <div class="flex items-center justify-center h-24 rounded bg-gray-50 dark:bg-gray-800">
-               <p class="text-2xl text-gray-400 dark:text-gray-500">Overview 3</p>
+               <p class="text-2xl text-gray-400 dark:text-gray-500">Product 3</p>
             </div>
          </div>
          <div class="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-            <p class="text-2xl text-gray-400 dark:text-gray-500">Detailed Overview</p>
+            <p class="text-2xl text-gray-400 dark:text-gray-500">Product Details</p>
          </div>
       </div>
    </div>

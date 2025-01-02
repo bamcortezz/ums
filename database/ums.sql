@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2025 at 05:34 AM
+-- Generation Time: Jan 02, 2025 at 12:15 PM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `email_config`
+--
+
+CREATE TABLE `email_config` (
+  `id` int(145) NOT NULL,
+  `email` varchar(145) DEFAULT NULL,
+  `password` varchar(145) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `email_config`
+--
+
+INSERT INTO `email_config` (`id`, `email`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'cortezfrancisemill@gmail.com', 'vsjd urmt omhg qzdw', '2024-09-23 12:45:50', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -35,16 +56,17 @@ CREATE TABLE `users` (
   `token` varchar(255) DEFAULT NULL,
   `status` enum('active','inactive') DEFAULT 'active',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `token_expiry` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `token`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Bam', 'cortezfrancisemill@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 'active', '2024-12-31 15:15:51', '2024-12-31 15:15:51'),
-(2, 'Bam Cortez', 'sakuragixgori@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 'active', '2025-01-01 01:57:31', '2025-01-01 01:57:31');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `token`, `status`, `created_at`, `updated_at`, `token_expiry`) VALUES
+(1, 'Bam', 'cortezfrancisemill@gmail.com', '202cb962ac59075b964b07152d234b70', 'c221f736608c3c1a4cac29361a34aacb424b1682dc028cf42b25e6b3942de40d', 'active', '2024-12-31 15:15:51', '2025-01-02 10:46:38', '2025-01-02 12:46:38'),
+(2, 'Bam Cortez', 'sakuragixgori@gmail.com', '202cb962ac59075b964b07152d234b70', NULL, 'active', '2025-01-01 01:57:31', '2025-01-01 01:57:31', NULL);
 
 --
 -- Indexes for dumped tables
