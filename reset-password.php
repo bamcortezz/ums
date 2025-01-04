@@ -1,8 +1,6 @@
 <?php 
 require_once('config/settings-config.php');
-require_once('dashboard/controller/authentication.php'); 
 include('src/partials/alert.php');
-
 ?>
 
 <!DOCTYPE html>
@@ -18,16 +16,19 @@ include('src/partials/alert.php');
     <div class="min-h-screen bg-gray-100 flex items-center justify-center p-4">
         <div class="max-w-md w-full bg-white rounded-xl shadow-lg p-8">
             <!-- reset password form start -->
-            <form class="space-y-4" action="reset-password.php" method="post" id="reset-password-form">
+            <form action="dashboard/controller/authentication.php" method="post" id="reset-password-form" class="space-y-4">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Reset Password</h2>
                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
+                <input type="hidden" name="token" value="<?php echo $_GET['token']; ?>">
+                <input type="hidden" name="id" value="<?php echo $_GET['id']; ?>">
+
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">New Password</label>
                     <input
                         type="password"
                         name="new_password"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-                        placeholder="••••••••" required />
+                        placeholder="Password" required />
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">Confirm New Password</label>
@@ -35,7 +36,7 @@ include('src/partials/alert.php');
                         type="password"
                         name="confirm_password"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-                        placeholder="••••••••" required />
+                        placeholder="Confirm Password" required />
                 </div>
                 <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 rounded-lg transition-colors" name="btn-reset-password">
                     Reset Password
